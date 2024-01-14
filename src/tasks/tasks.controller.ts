@@ -14,7 +14,7 @@ import {
 import { TasksService } from './tasks.service';
 // import { Task, TaskStatus } from './tasks.model';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { GetTasksFilterDto } from './dto/get-tasks-filter-dto';
+import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 import { Task } from './task.entity';
 import { TaskStatus } from './task-status.enum';
@@ -25,9 +25,7 @@ export class TasksController {
 
   @Get()
   getTasks(@Query() filterDto: GetTasksFilterDto): Promise<Task[]> {
-    if (Object.keys(filterDto).length) {
       return this.tasksService.getTasks(filterDto);
-    }
   }
 
   @Post()
