@@ -1,2 +1,4 @@
+server:
+  origin: frontend-link
 db:
   synchronize: false
